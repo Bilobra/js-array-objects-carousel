@@ -38,7 +38,7 @@ const slidesWrapper = document.querySelector('.slides-wrapper')
 // funzione che mi genera una slide
 
 function slide(img){
-	slidesWrapper.innerHTML += `<li class="slide">
+	slidesWrapper.innerHTML += `<li class="slide active">
 	<img src="${img.url}" alt="">
 	<div class="slide__content">
 	<h3 class="slide__title">${img.title}</h3>
