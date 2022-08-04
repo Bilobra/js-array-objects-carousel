@@ -33,3 +33,17 @@ const slides = [
 			'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam.',
 	},
 ]
+
+const slidesWrapper = document.querySelector('.slides-wrapper')
+// funzione che mi genera una slide
+
+function slide(img){
+	slidesWrapper.innerHTML += `<li class="slide">
+	<img src="${img.url}" alt="">
+	<div class="slide__content">
+	<h3 class="slide__title">${img.title}</h3>
+	<p class="slide__description">${img.description}</p>
+	</div>`
+}
+
+slides.forEach(slide)
