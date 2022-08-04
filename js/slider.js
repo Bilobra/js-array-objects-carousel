@@ -60,4 +60,23 @@ liActive[imgIndex].classList.add('active');
 const nextBtn = document.querySelector('.arrow-next');
 const prevBtn = document.querySelector('.arrow-prev');
 
+nextBtn.addEventListener('click', function () {
+	liActive[imgIndex].classList.remove('active')
+	imgIndex++
+
+	if (imgIndex === liActive.length) {
+		imgIndex = 0
+	}
+
+	liActive[imgIndex].classList.add('active')
+})
+
+prevBtn.addEventListener('click', function () {
+	liActive[imgIndex].classList.remove('active')
+	imgIndex--
+	if (imgIndex < 0) {
+		imgIndex = liActive.length - 1
+	}
+	liActive[imgIndex].classList.add('active')
+})
 
