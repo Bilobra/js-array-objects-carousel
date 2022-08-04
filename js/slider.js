@@ -54,5 +54,10 @@ slides.forEach((img) => {
 
 const liActive = document.querySelectorAll('.slide');
 let imgIndex = 0;
-liActive[imgIndex].classList.add('active')
+liActive[imgIndex].classList.add('active');
+
+
+const nextBtn = document.querySelector('.arrow-next');
+const prevBtn = document.querySelector('.arrow-prev');
+
 
