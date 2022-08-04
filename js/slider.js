@@ -60,7 +60,11 @@ liActive[imgIndex].classList.add('active');
 const nextBtn = document.querySelector('.arrow-next');
 const prevBtn = document.querySelector('.arrow-prev');
 
-nextBtn.addEventListener('click', function () {
+nextBtn.addEventListener('click', goNext)
+prevBtn.addEventListener('click', goPrev)
+
+function goNext() {
+
 	liActive[imgIndex].classList.remove('active')
 	imgIndex++
 
@@ -69,14 +73,24 @@ nextBtn.addEventListener('click', function () {
 	}
 
 	liActive[imgIndex].classList.add('active')
-})
 
-prevBtn.addEventListener('click', function () {
+
+}
+function goPrev() {
 	liActive[imgIndex].classList.remove('active')
 	imgIndex--
 	if (imgIndex < 0) {
 		imgIndex = liActive.length - 1
 	}
 	liActive[imgIndex].classList.add('active')
+}
+
+
+// BONUS
+
+let clock = setInterval(goNext, 3000)
+slidesWrapper.addEventListener('mouseenter', () => {
+	console.log('stop autoplay')
+	clearInterval(clock)
 })
 
