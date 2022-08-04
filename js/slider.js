@@ -37,24 +37,22 @@ const slides = [
 const slidesWrapper = document.querySelector('.slides-wrapper')
 // funzione che mi genera una slide
 
-function slide(img, i) {
-	const li = document.createElement('li')
-	li.classList.add('slide')
 
-	// const content = document.createElement(<img src="${img.url}" alt="">
-	// <div class="slide__content">
-	// 	<h3 class="slide__title">${img.title}</h3>
-	// 	<p class="slide__description">${img.description}</p>
-	// </div>`)
 
-	if (slides[i] === 0) {
-		li.classList.add('active')
-	}
+slides.forEach((img) => {
 
-	li.append(content)
-	slidesWrapper.append(li)
+	slidesWrapper.innerHTML += `
+	<li class="slide">
+		<img src="${img.url}" alt="">
+	 	<div class="slide__content">
+	 		<h3 class="slide__title">${img.title}</h3>
+	 		<p class="slide__description">${img.description}</p>
+	 	</div>
+	</li>`
 
-}
+})
 
-slides.forEach(slide)
+const liActive = document.querySelectorAll('.slide');
+let imgIndex = 0;
+liActive[imgIndex].classList.add('active')
 
