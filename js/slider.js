@@ -38,16 +38,16 @@ const slidesWrapper = document.querySelector('.slides-wrapper')
 // funzione che mi genera una slide
 
 function slide(img) {
-	slidesWrapper.innerHTML += `<li class="slide">
+	slidesWrapper.innerHTML += `
 	<img src="${img.url}" alt="">
 	<div class="slide__content">
 	<h3 class="slide__title">${img.title}</h3>
 	<p class="slide__description">${img.description}</p>
-	</div>`
+	`
 
 
 }
-
+let slidesAll = slides.forEach(slide)
 let currentIndex = 0
 
 for (let i = 0; i < slides.length; i++) {
@@ -61,6 +61,7 @@ for (let i = 0; i < slides.length; i++) {
 	}
 
 
-	slidesWrapper.append(slides.forEach(slide))
+	li.append(slidesAll)
+	slidesWrapper.append(li)
 
 }
